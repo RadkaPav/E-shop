@@ -3,7 +3,6 @@
   --color-red: #d64445;
   --product-white: #fff;
   --product-red: #E60505;
-  --product-green: #3b990f;
   --product-grey: #808080;
   --product-brown: #413e01;
   --product-yellow: #fffa87;
@@ -35,6 +34,7 @@ body {
 .hero-section {
   background-image: url(images/hero-section-img.png);
   background-position: center;
+  background-repeat: no-repeat;
   height: 400px;
   width: 100%;
   border-radius: 8px;
@@ -111,7 +111,7 @@ body {
   padding: 16px;
   background-size: cover;
   background-position: center;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, 0.3);
   background-blend-mode: darken;
 }
@@ -129,7 +129,7 @@ body {
 }
 
 /* CARD SECTION */
-.card-section {
+.cards-section {
   background-color: var(--background-light-green);
   padding: 16px;
   display: flex;
@@ -143,6 +143,7 @@ body {
   padding: 16px;
   position: relative;
   border-radius: 8px;
+  flex-grow: 1;
 }
 
 .product-image-container {
@@ -437,12 +438,6 @@ body {
   }
 }
 
-@media only screen and (min-width: 700px) {
-  .promo {
-    width: 300px;
-  }
-}
-
 @media only screen and (min-width: 768px) {
   .content {
     width: 70%;
@@ -455,26 +450,35 @@ body {
   .hero-section h1 {
     font-size: 32px;
   }
-}
 
-@media only screen and (min-width: 930px) {
-  .promo-section {
-    justify-content: space-between;
+  .promo {
+    width: 300px;
   }
 }
 
 @media only screen and (min-width: 1180px) {
+  .promo-section {
+    justify-content: space-around;
+  }
   .product-card {
     width: 380px;
+    display: flex;
+    flex-direction: column;
   }
 
-  .card-section {
+  .cards-section {
     justify-content: space-evenly;
     gap: 2rem;
   }
-}
 
-@media only screen and (min-width: 1200px) {
+  .product-image-container {
+    height: 400px;
+  }
+
+  .img {
+    object-fit: contain;
+  }
+
   .discount-container {
     display: none;
   }
